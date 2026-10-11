@@ -1,0 +1,447 @@
+/* Global & Reset Styles */
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+body { 
+    background-color: #f4f6f9; 
+    color: #333; 
+    line-height: 1.6; 
+}
+a { 
+    text-decoration: none; 
+    color: inherit; 
+}
+
+/* 1. Top Ticker / Meta Bar */
+.top-bar { 
+    background-color: #ffffff; 
+    padding: 8px 5%; 
+    font-size: 13px; 
+    border-bottom: 1px solid #e0e0e0; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+.ticker { 
+    color: #d32f2f; 
+    font-weight: bold; 
+}
+.ticker-text { 
+    color: #555; 
+    margin-left: 10px; 
+    font-weight: normal; 
+}6
+
+/* 2. Main Header / Brand Identity */
+.main-header { 
+    padding: 25px 5%; 
+    background: #fff; 
+    text-align: center; 
+     border-bottom: 3px solid #1a237e; 
+}
+.brand-logo { 
+    font-size: 32px; 
+    font-weight: 800; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    color: #1a237e; 
+}
+.brand-logo span { 
+    color: #ff6f00; 
+}
+
+/* 3. Navigation Bar */
+.navbar { 
+    background-color: #1a237e; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+}
+.nav-container { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+}
+.nav-links { 
+    display: flex; 
+    list-style: none; 
+}
+.nav-links li a { 
+    display: block; 
+    padding: 15px 20px; 
+    color: #fff; 
+    font-size: 14px; 
+    font-weight: 600; 
+    text-transform: uppercase; 
+    transition: 0.3s; 
+}
+.nav-links li a:hover { 
+    background-color: #ff6f00; 
+}
+.search-box { 
+    padding: 6px 12px; 
+    border-radius: 4px; 
+    border: none; 
+
+    font-size: 14px; 
+}
+
+/* Main Container Layout */
+.container { 
+    max-width: 1200px; 
+    margin: 30px auto; 
+    padding: 0 20px; 
+    display: grid; 
+    grid-template-columns: 2.5fr 1fr; 
+    gap: 30px; 
+}
+
+/* 4. Featured Hero Section (Left Column Large) */
+.featured-hero { 
+    background-color: #000; 
+    color: #fff; 
+    height: 420px; 
+    position: relative; 
+    border-radius: 6px; 
+    overflow: hidden; 
+    margin-bottom: 30px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15); 
+}
+.hero-img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    opacity: 0.65; 
+}
+.hero-overlay { 
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
+    padding: 40px 30px; 
+    background: linear-gradient(transparent, rgba(0,0,0,0.9)); 
+}
+.badge { 
+    background-color: #ff6f00; 
+    color: white; 
+    padding: 4px 10px; 
+    font-size: 11px; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    border-radius: 3px; 
+    display: inline-block; 
+    margin-bottom: 12px; 
+}
+.hero-title { 
+    font-size: 28px; 
+    font-weight: 700; 
+    line-height: 1.3; 
+    margin-bottom: 10px; 
+}
+
+/* Section Headings */
+.section-title { 
+    font-size: 18px; 
+    font-weight: bold; 
+    text-transform: uppercase; 
+    color: #1a237e; 
+    border-left: 5px solid #ff6f00; 
+    padding-left: 10px; 
+    margin-bottom: 20px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+.view-all-link { 
+    font-size: 12px; 
+    color: #ff6f00; 
+}
+
+/* 5. Sub-Articles / Project Grid */
+.grid-layout { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px; 
+    margin-bottom: 40px; 
+}
+.card { 
+    background: #fff; 
+    border-radius: 6px; 
+    overflow: hidden; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06); 
+    transition: 0.3s; 
+}
+.card:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12); 
+}
+.card-img { 
+    width: 100%; 
+    height: 180px; 
+    object-fit: cover; 
+}
+.card-body { 
+    padding: 15px; 
+}
+.card-meta { 
+    font-size: 11px; 
+    color: #777; 
+    margin-bottom: 8px; 
+}
+.card-title { 
+    font-size: 16px; 
+    font-weight: bold; 
+    color: #222; 
+    margin-bottom: 8px; 
+}
+.card-title:hover { 
+    color: #ff6f00; 
+}
+
+/* 6. Sidebar (Right Column) */
+.sidebar-widget { 
+    background: #fff; 
+    padding: 20px; 
+    border-radius: 6px; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06); 
+    margin-bottom: 30px; 
+}
+.sidebar-title { 
+    margin-bottom: 15px; 
+}
+.mini-list { 
+    list-style: none; 
+}
+.mini-item { 
+    display: flex; 
+    gap: 12px; 
+    padding: 12px 0; 
+    border-bottom: 1px solid #eee; 
+}
+.mini-item:last-child { 
+    border-bottom: none; 
+}
+.mini-thumb { 
+    width: 70px; 
+    height: 70px; 
+    object-fit: cover; 
+    border-radius: 4px; 
+    flex-shrink: 0; 
+}
+.mini-text { 
+    font-size: 13px; 
+    font-weight: 600; 
+    color: #333; 
+    line-height: 1.4; 
+}
+.mini-text:hover { 
+    color: #1a237e; 
+}
+
+/* Emergency Widget Extra Styles */
+.emergency-widget { 
+    background-color: #1a237e; 
+    color: #fff; 
+}
+.emergency-heading { 
+    margin-bottom: 10px; 
+    color: #ff6f00; 
+}
+.emergency-text { 
+    font-size: 13px; 
+    margin-bottom: 15px; 
+}
+.emergency-btn { 
+    background: #ff6f00; 
+    color: #fff; 
+    padding: 8px 15px; 
+    display: inline-block; 
+    font-size: 12px; 
+    font-weight: bold; 
+    border-radius: 4px; 
+}
+
+/* Footer */
+footer { 
+    background: #111; 
+    color: #ccc; 
+    padding: 40px 20px; 
+    text-align: center; 
+    font-size: 14px; 
+    margin-top: 50px; 
+}
+footer p { 
+    margin-bottom: 10px; 
+}
+.license-info { 
+    font-size: 12px; 
+    color: #777; 
+}
+
+/* Responsive Design for Tablets and Phones */
+@media (max-width: 900px) {
+    .container { 
+        grid-template-columns: 1fr; 
+    }
+    .grid-layout { 
+        grid-template-columns: 1fr; 
+    }
+}
+/* --- Add these enhancements to the bottom of your style.css --- */
+
+/* Smooth animation transition for link hovers */
+.nav-links li a {
+    transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+/* Give the active page tab a distinct, polished appearance */
+.nav-links li a.active {
+    background-color: #ff6f00 !important; /* Forces the active page highlight */
+    border-bottom: 3px solid #ffffff;
+}
+
+/* Subtle pulse glow for the top flashing update ticker text */
+.ticker {
+    animation: flashTicker 2s infinite ease-in-out;
+}
+
+@keyframes flashTicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+/* Interactive link effects inside content posts */
+.card-title a {
+    transition: color 0.2s ease;
+}
+.card-title a:hover {
+    color: #ff6f00;
+}
+
+/* Smooth zoom effect on project card pictures when hovered */
+.card {
+    overflow: hidden;
+}
+.card-img {
+    transition: transform 0.4s ease;
+}
+.card:hover .card-img {
+    transform: scale(1.05); /* Soft, natural image zoom */
+}
+/* --- Add these electrical-specific styling rules to the bottom of your style.css --- */
+
+/* Changes the color theme dynamically when viewing the electrical layout */
+body:has(#electrical-page) {
+    background-color: #f7f9fa;
+}
+
+/* Adds a warning/caution amber accent pattern to specific industrial cards */
+.card-meta:contains("⚡") {
+    color: #e65100;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* Custom layout marker badge for high-voltage panel showcases */
+.electrical-badge {
+    background-color: #ffd600;
+    color: #000000;
+    padding: 3px 8px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-radius: 2px;
+}
+
+/* Subtle glow effect simulating live electrical currents on industrial panels */
+.emergency-widget:hover {
+    box-shadow: 0 0 15px rgba(255, 111, 0, 0.4);
+    transition: box-shadow 0.3s ease-in-out;
+}
+/* --- Add these electronics-specific styles to your style.css --- */
+
+/* Changes the meta header color tag for tech projects to an electronic green color */
+.card-meta {
+    color: #4caf50;
+    font-weight: 600;
+}
+/* --- Add these Project Showcase enhancements to your style.css --- */
+
+/* Distinctive badge markers for hybrid cross-disciplinary items */
+.card-meta {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #1a237e; /* Primary corporate navy tone */
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+/* Enhances title weights inside the portfolio grid layout */
+.portfolio-grid .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #111111;
+}
+
+/* Premium smooth shadow transition for portfolio card items */
+.card {
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(26, 35, 126, 0.12);
+}
+
+/* Subtle image overlay tint to mirror premium darkroom publication layouts */
+.card-img {
+    filter: brightness(0.95);
+    transition: filter 0.3s ease, transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.card:hover .card-img {
+    filter: brightness(1.02);
+}
+/* --- Contact Page Form Styling --- */
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row input {
+    flex: 1;
+}
+
+.form-select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fff;
+    color: #333;
+    font-size: 14px;
+}
+
+.simple-form input:focus, 
+.simple-form select:focus, 
+.simple-form textarea:focus {
+    border-color: #1a237e;
+    outline: none;
+    box-shadow: 0 0 5px rgba(26, 35, 126, 0.2);
+}
+
+.sidebar-text-meta {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 12px;
+}
