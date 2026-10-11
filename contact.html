@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Quotations - Tech & Power Infrastructure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Meta Ticker Bar -->
+    <div class="top-bar">
+        <div><span class="ticker">INTAKE:</span><span class="ticker-text">Project consultation queues open for Q4 2026.</span></div>
+        <div>Sunday, September 27, 2026</div>
+    </div>
+
+    <!-- Main Brand Header -->
+    <header class="main-header">
+        <div class="brand-logo">STEVETECH<span>DIGITAL</span></div>
+    </header>
+
+    <!-- Navigation Bar (Active on Get a Quote) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="networking.html">Networking</a></li>
+                <li><a href="electrical.html">Electrical Systems</a></li>
+                <li><a href="contact.html" class="active">contact us</a></li>
+            </ul>
+            <input type="text" class="search-box" placeholder="Search systems...">
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        
+        <!-- Left Column: Detailed Intake Form -->
+        <main>
+            <div class="section-title">✉️ Request a Technical Consultation</div>
+            
+            <section class="detail-section contact-block">
+                <h3>Project Parameters Intake</h3>
+                <p>Provide your site specifics, voltage loads, networking requirements, or PCB custom hardware needs below for a formal engineering response.</p>
+                
+                <form class="simple-form" onsubmit="event.preventDefault(); alert('Your inquiry has been successfully transmitted!');">
+                    <div style="display: flex; gap: 15px;">
+                        <input type="text" placeholder="Full Name / Company" required style="flex: 1;">
+                        <input type="tel" placeholder="Phone Number" required style="flex: 1;">
+                    </div>
+                    <input type="email" placeholder="Email Address" required>
+                    <select class="search-box" style="width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; background: #fff; color: #333;" required>
+                        <option value="">Select Primary Service Domain</option>
+                        <option value="networking">Enterprise Networking & Cabling</option>
+                        <option value="electrical">Heavy Electrical Power Systems</option>
+                        <option value="electronics">Embedded Electronics & PCB Prototyping</option>
+                        <option value="hybrid">Hybrid Cross-Disciplinary Integration</option>
+                    </select>
+                    <textarea placeholder="Describe your architectural layout, expected loads, or maintenance requirements..." rows="5" required></textarea>
+                    <button type="submit" class="submit-btn">Transmit Inquiry</button>
+                </form>
+            </section>
+        </main>
+
+        <!-- Right Column: Direct Contact & Emergency Data -->
+        <aside>
+            <div class="sidebar-widget">
+                <div class="section-title sidebar-title">Direct Dispatch</div>
+                <p style="font-size: 13px; color: #555; margin-bottom: 12px;"><strong>Office & Lab Hours:</strong><br>Monday – Saturday: 08:00 – 18:00 EAT</p>
+                <p style="font-size: 13px; color: #555;"><strong>Emergency Support:</strong><br>24/7 on-call availability for critical electrical and network outages.</p>
+            </div>
+
+            <div class="sidebar-widget emergency-widget">
+                <h4 class="emergency-heading">Emergency Line</h4>
+                <p class="emergency-text">Immediate deployment for industrial facility power faults or core server down states.</p>
+                <a href="tel:+1234567890" class="emergency-btn">Call Direct Line</a>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Heavy InfraDigital Portal. All Rights Reserved.</p>
+        <p class="license-info">Licensed Contractor Electrical #EC-XXXXX | Certified Network Engineer CCNA/CompTIA</p>
+    </footer>
+
+</body>
+</html>
