@@ -3,87 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enterprise Networking - Tech & Power Infrastructure</title>
+    <title>Enterprise Networking - STEVETECH DIGITAL</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Top Meta Ticker Bar -->
     <div class="top-bar">
-        <div><span class="ticker">UPDATES:</span><span class="ticker-text">Structured cabling service lines now active.</span></div>
-        <div>Sunday, September 27, 2026</div>
+        <div><span class="ticker">UPDATES:</span><span class="ticker-text"> Structured cabling service lines now active in Kitui.</span></div>
+        <div id="currentDate">Kitui Based - Countrywide</div>
     </div>
 
-    <!-- Main Brand Header -->
     <header class="main-header">
         <div class="brand-logo">STEVETECH<span>DIGITAL</span></div>
-    </header>
-
-    <!-- Navigation Bar (Active on Networking) -->
-    <nav class="navbar">
-        <div class="nav-container">
+        <nav class="navbar" id="navbar">
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="networking.html" class="active">Networking</a></li>
                 <li><a href="electrical.html">Electrical Systems</a></li>
-                <li><a href="contact.html">contact us</a></li>
+                <li><a href="services.html">Other Services</a></li>
+                <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
             </ul>
-            <input type="text" class="search-box" placeholder="Search systems...">
+        </nav>
+        <div class="header-right">
+            <input type="text" id="searchInput" class="search-box" placeholder="Search networking...">
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Main Container -->
-    <div class="container">
-        
-        <!-- Left Column: Networking Content -->
+    <section class="hero-smart">
+        <h1>🌐 Enterprise Networking Services</h1>
+        <p>CCNA Certified - Structured Cabling, WiFi, Server Racks, VPN in Kitui</p>
+    </section>
+
+    <div class="content-wrapper">
         <main>
-            <div class="section-title">🌐 Enterprise Networking Services</div>
-            
-            <section class="detail-section" style="border-top-color: #ff6f00;">
+            <section class="detail-section" style="border-top:4px solid #ff6f00; background:white; padding:20px; border-radius:8px; margin-bottom:20px;">
                 <h3>Full-Stack Network Infrastructure</h3>
-                <p>Reliable data performance starts with clean physical and logical architecture. We install, test, and certify high-speed data backbones for offices, commercial warehouses, and residential smart spaces.</p>
+                <p>Reliable data performance starts with clean physical and logical architecture. We install, test, and certify high-speed data backbones for offices, commercial warehouses, and residential smart spaces. Call 0706866177 for quote.</p>
             </section>
 
             <div class="grid-layout">
                 <article class="card">
-                    <img src="https://unsplash.com" alt="Cabling" class="card-img">
+                    <!-- YOUR PHOTO -->
+                    <img src="images/network-cabling.jpg" alt="Cabling" class="card-img" onerror="this.src='https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600'">
                     <div class="card-body">
                         <div class="card-meta">🌐 Structured Cabling</div>
-                        <h3 class="card-title">Cat6A & Fiber Optic Backbone Routing and Patch Panel Terminations</h3>
+                        <h3 class="card-title"><a href="contact.html">Cat6A & Fiber Optic Backbone Routing and Patch Panel Terminations - Request Quote</a></h3>
                     </div>
                 </article>
 
                 <article class="card">
-                    <img src="https://unsplash.com" alt="Racks" class="card-img">
+                    <img src="images/network-rack.jpg" alt="Racks" class="card-img" onerror="this.src='https://images.unsplash.com/photo-1597852075234-fd721ac361d3?w=600'">
                     <div class="card-body">
                         <div class="card-meta">🌐 Rack Management</div>
-                        <h3 class="card-title">Server Rack Cleanups, Cable Dressing, and Switch Configuration</h3>
+                        <h3 class="card-title"><a href="contact.html">Server Rack Cleanups, Cable Dressing, and Switch Configuration</a></h3>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="images/network-wifi.jpg" alt="WiFi" class="card-img" onerror="this.src='https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600'">
+                    <div class="card-body">
+                        <div class="card-meta">📶 WiFi Solutions</div>
+                        <h3 class="card-title"><a href="contact.html">Business WiFi Setup, Mesh Systems & VPN Gateway Installation</a></h3>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="images/network-security.jpg" alt="Firewall" class="card-img" onerror="this.src='https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600'">
+                    <div class="card-body">
+                        <div class="card-meta">🔒 Security</div>
+                        <h3 class="card-title"><a href="contact.html">Edge Firewall Setup & Network Security Hardening</a></h3>
                     </div>
                 </article>
             </div>
         </main>
 
-        <!-- Right Column: Sidebar -->
         <aside>
             <div class="sidebar-widget">
                 <div class="section-title sidebar-title">Networking Specs</div>
-                <p style="font-size: 13px; color: #555;">Certified for Fluke cable testing, gigabit switch deployment, and secure VPN gateway setups.</p>
+                <p style="font-size:13px; color:#555;">Certified for Fluke cable testing, gigabit switch deployment, and secure VPN gateway setups.</p>
+                <ul style="font-size:13px;margin-top:10px;padding-left:15px">
+                    <li>Cat6 / Cat6A / Fiber</li>
+                    <li>Patch Panel Termination</li>
+                    <li>Cisco / Mikrotik Config</li>
+                    <li>WiFi Site Survey</li>
+                </ul>
             </div>
-
             <div class="sidebar-widget emergency-widget">
                 <h4 class="emergency-heading">Network Outage?</h4>
                 <p class="emergency-text">Get rapid diagnostics and hardware replacement support.</p>
-                <a href="contact.html" class="emergency-btn">Request Support</a>
+                <a href="https://wa.me/254706866177?text=Hello%20STEVETECH%20I%20have%20a%20network%20outage" class="emergency-btn">WhatsApp Support</a>
             </div>
         </aside>
-
     </div>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Heavy InfraDigital Portal. All Rights Reserved.</p>
-        <p class="license-info">Certified Network Engineer CCNA/CompTIA</p>
+        <p>&copy; 2026 STEVETECH DIGITAL. All Rights Reserved.</p>
+        <p class="license-info">Certified Network Engineer CCNA/CompTIA - Call 0706866177</p>
     </footer>
 
+<script src="search.js"></script>
 </body>
 </html>
