@@ -3,87 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Electrical Systems - Tech & Power Infrastructure</title>
+    <title>Electrical Systems - STEVETECH DIGITAL</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Top Meta Ticker Bar -->
     <div class="top-bar">
-        <div><span class="ticker">UPDATES:</span><span class="ticker-text">Commercial heavy-power inspections available.</span></div>
-        <div>Sunday, September 27, 2026</div>
+        <div><span class="ticker">UPDATES:</span><span class="ticker-text"> Commercial heavy-power inspections available in Kitui.</span></div>
+        <div id="currentDate">Kitui Based - Countrywide</div>
     </div>
 
-    <!-- Main Brand Header -->
     <header class="main-header">
         <div class="brand-logo">STEVETECH<span>DIGITAL</span></div>
-    </header>
-
-    <!-- Navigation Bar (Active on Electrical Systems) -->
-    <nav class="navbar">
-        <div class="nav-container">
+        <nav class="navbar" id="navbar">
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="networking.html">Networking</a></li>
                 <li><a href="electrical.html" class="active">Electrical Systems</a></li>
-                <li><a href="contact.html">contact us</a></li>
+                <li><a href="services.html">Other Services</a></li>
+                <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
             </ul>
-            <input type="text" class="search-box" placeholder="Search systems...">
+        </nav>
+        <div class="header-right">
+            <input type="text" id="searchInput" class="search-box" placeholder="Search electrical...">
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Main Container -->
-    <div class="container">
-        
-        <!-- Left Column: Electrical Content -->
+    <section class="hero-smart">
+        <h1>⚡ Heavy Electrical Power Systems</h1>
+        <p>Licensed Contractor - Wiring, Solar, Panels, Generator & Safety in Kitui</p>
+    </section>
+
+    <div class="content-wrapper">
         <main>
-            <div class="section-title">⚡ Heavy Electrical Power Systems</div>
-            
-            <section class="detail-section" style="border-top-color: #ff6f00;">
+            <section class="detail-section" style="border-top:4px solid #ff6f00; background:white; padding:20px; border-radius:8px; margin-bottom:20px;">
                 <h3>Power Distribution & Electrical Engineering</h3>
-                <p>Safe, code-compliant, and high-efficiency electrical infrastructure. We design and install robust power solutions capable of supporting heavy computing clusters, industrial machinery, and smart facility automation hubs.</p>
+                <p>Safe, code-compliant, and high-efficiency electrical infrastructure. We design and install robust power solutions capable of supporting heavy computing clusters, industrial machinery, and smart facility automation hubs. Call 0706866177</p>
             </section>
 
             <div class="grid-layout">
                 <article class="card">
-                    <img src="https://unsplash.com" alt="Electrical Panel" class="card-img">
+                    <img src="images/electrical-panel.jpg" alt="Electrical Panel" class="card-img" onerror="this.src='https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600'">
                     <div class="card-body">
                         <div class="card-meta">⚡ Power Systems</div>
-                        <h3 class="card-title">Main Service Panel Upgrades, Load Balancing, and Sub-Panel Isolation</h3>
+                        <h3 class="card-title"><a href="contact.html">Main Service Panel Upgrades, Load Balancing, and Sub-Panel Isolation - Request Quote</a></h3>
                     </div>
                 </article>
 
                 <article class="card">
-                    <img src="https://unsplash.com" alt="Industrial Electrician" class="card-img">
+                    <img src="images/electrical-generator.jpg" alt="Generator" class="card-img" onerror="this.src='https://images.unsplash.com/photo-1509390144018-eeaf65052242?w=600'">
                     <div class="card-body">
                         <div class="card-meta">⚡ Backups & Safety</div>
-                        <h3 class="card-title">Automatic Transfer Switch (ATS) Provisioning & Emergency Generator Loops</h3>
+                        <h3 class="card-title"><a href="contact.html">Automatic Transfer Switch (ATS) Provisioning & Emergency Generator Loops</a></h3>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="images/electrical-wiring.jpg" alt="Wiring" class="card-img" onerror="this.src='https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600'">
+                    <div class="card-body">
+                        <div class="card-meta">⚡ Installation</div>
+                        <h3 class="card-title"><a href="contact.html">Complete House Wiring, Industrial Wiring & Compliance Inspection</a></h3>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="images/electrical-solar.jpg" alt="Solar" class="card-img" onerror="this.src='https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=600'">
+                    <div class="card-body">
+                        <div class="card-meta">☀️ Solar</div>
+                        <h3 class="card-title"><a href="contact.html">Solar Installation, Inverter Setup & Battery Backup Systems</a></h3>
                     </div>
                 </article>
             </div>
         </main>
 
-        <!-- Right Column: Sidebar -->
         <aside>
             <div class="sidebar-widget">
                 <div class="section-title sidebar-title">Compliance & Rules</div>
-                <p style="font-size: 13px; color: #555;">Fully compliant with national electrical safety standards, thermal imaging load assessments, and commercial zoning guidelines.</p>
+                <p style="font-size:13px; color:#555;">Fully compliant with national electrical safety standards, thermal imaging load assessments, and commercial zoning guidelines.</p>
+                <ul style="font-size:13px;margin-top:10px;padding-left:15px">
+                    <li>Single & 3-Phase Power</li>
+                    <li>Earthing & Lightning</li>
+                    <li>Load Assessment</li>
+                    <li>Safety Certificates</li>
+                </ul>
             </div>
-
             <div class="sidebar-widget emergency-widget">
                 <h4 class="emergency-heading">Power Outage or Fault?</h4>
                 <p class="emergency-text">Emergency electrical remediation and short-circuit troubleshooting is live 24/7.</p>
-                <a href="contact.html" class="emergency-btn">Request Support</a>
+                <a href="https://wa.me/254706866177?text=Hello%20STEVETECH%20Power%20fault%20need%20help" class="emergency-btn">WhatsApp Emergency</a>
             </div>
         </aside>
-
     </div>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Heavy InfraDigital Portal. All Rights Reserved.</p>
-        <p class="license-info">Licensed Contractor Electrical #EC-XXXXX</p>
+        <p>&copy; 2026 STEVETECH DIGITAL. All Rights Reserved.</p>
+        <p class="license-info">Licensed Contractor Electrical - Call 0706866177</p>
     </footer>
 
+<script src="search.js"></script>
 </body>
 </html>
