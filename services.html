@@ -1,80 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact & Quotations - Tech & Power Infrastructure</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Other Services - STEVETECH DIGITAL</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Top Meta Ticker Bar -->
-    <div class="top-bar">
-        <div><span class="ticker">INTAKE:</span><span class="ticker-text">Project consultation queues open for Q4 2026.</span></div>
-        <div>Sunday, September 27, 2026</div>
+<div class="top-bar">
+  <span><b class="highlight">INTAKE:</b> Project consultation open for Q4 2026</span>
+  <span id="currentDate">Kitui Based - Countrywide Service</span>
+</div>
+
+<header class="main-header">
+  <div class="brand-logo">STEVETECH<span>DIGITAL</span></div>
+  <nav class="navbar" id="navbar">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="networking.html">Networking</a></li>
+      <li><a href="electrical.html">Electrical Systems</a></li>
+      <li><a href="services.html" class="active">Other Services</a></li>
+      <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
+    </ul>
+  </nav>
+  <div class="header-right">
+    <input type="text" id="searchInput" class="search-box" placeholder="Search services...">
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </div>
+</header>
+
+<section class="hero-smart">
+  <div class="hero-content">
+    <h1>Our Services in Kitui</h1>
+    <p>Professional, licensed, affordable - real photos, real jobs.</p>
+  </div>
+</section>
+
+<div class="content-wrapper">
+  <div class="section-header">
+    <h2>What We Offer</h2>
+    <a href="contact.html" class="view-all">Request Quote →</a>
+  </div>
+
+  <div class="grid-smart">
+    <div class="service-card"><h3>📺 TV Mounting</h3><p>Professional wall mounting, neat cables, home theatre setup.</p></div>
+    <div class="service-card"><h3>📶 Networking & WiFi</h3><p>Router setup, WiFi extension, LAN cabling, office networks.</p></div>
+    <div class="service-card"><h3>📹 CCTV Installation</h3><p>Home & business security cameras with phone viewing.</p></div>
+    <div class="service-card"><h3>⚡ Electrical Systems</h3><p>House wiring, sockets, lighting, solar installation & repair.</p></div>
+    <div class="service-card"><h3>📡 DSTV / Zuku / Azam</h3><p>Satellite dish install, signal alignment, projector installation.</p></div>
+    <div class="service-card"><h3>☀️ Solar Systems</h3><p>Solar panels, inverters, batteries for homes & businesses.</p></div>
+  </div>
+
+  <h2 class="gallery-title">Our Recent Work - Real Photos Gallery</h2>
+  <p class="gallery-sub">See how we work. All photos are our real jobs in Kitui. Type in search to filter!</p>
+
+  <div class="upload-note">
+    <b>📸 How to upload:</b> GitHub > Add file > Upload files > Upload photos named <b>work1.jpg to work6.jpg</b> into folder <code>images</code>
+  </div>
+
+  <div class="gallery-grid">
+    <div class="work-card">
+      <img src="images/work1.jpg" alt="TV Mounting" onerror="this.src='https://via.placeholder.com/400x220?text=Upload+work1.jpg'">
+      <div class="work-info"><div class="work-title">TV Mounting - Client Home Kitui</div><div class="work-desc">55" Samsung neatly mounted, cables hidden</div></div>
     </div>
+    <div class="work-card">
+      <img src="images/work2.jpg" alt="Installing" onerror="this.src='https://via.placeholder.com/400x220?text=Upload+work2.jpg'">
+      <div class="work-info"><div class="work-title">Me Installing TV Bracket</div><div class="work-desc">Professional drilling & leveling</div></div>
+    </div>
+    <div class="work-card">
+      <img src="images/work3.jpg" alt="WiFi" onerror="this.src='https://via.placeholder.com/400x220?text=Upload+work3.jpg'">
+      <div class="work-info"><div class="work-title">WiFi Setup Complete</div><div class="work-desc">Router + Extender - Full house coverage</div></div>
+    </div>
+    <div class="work-card">
+      <img src="images/work4.jpg" alt="Electrical" onerror="this.src='https://via.placeholder.com/400x220?text=Upload+work4.jpg'">
+      <div class="work-info"><div class="work-title">Electrical Wiring</div><div class="work-desc">House wiring & DB installation</div></div>
+    </div>
+    <div class="work-card">
+      <img src="images/work5.jpg" alt="CCTV" onerror="this.src='https://via.placeholder.com/400x220?text=Upload+work5.jpg'">
+      <div class="work-info"><div class="work-title">CCTV Installation</div><div class="work-desc">4-camera system with phone viewing</div></div>
+    </div>
+    <div class="work-card">
+      <img src="images/work6.jpg" alt="Theatre" onerror="this.src='https://via.placeholder.com/400x220?text=Upload+work6.jpg'">
+      <div class="work-info"><div class="work-title">Home Theatre Setup</div><div class="work-desc">Projector + Sound system</div></div>
+    </div>
+  </div>
 
-    <!-- Main Brand Header -->
-    <header class="main-header">
-        <div class="brand-logo">STEVETECH<span>DIGITAL</span></div>
-    </header>
-
-    <!-- Navigation Bar (Active on Get a Quote) -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="networking.html">Networking</a></li>
-                <li><a href="electrical.html">Electrical Systems</a></li>
-                <li><a href="contact.html">contact us</a></li>
-                <li><a href="Services.html" class="active">other services</a></li>
-            </ul>
-            <input type="text" class="search-box" placeholder="Search systems...">
-        </div>
-        
-<section class="hero">
-<h1>Professional Electrical & Networking Services in Kitui</h1>
-<p>TV Mounting • WiFi • CCTV • Electrical Wiring • Solar</p>
-<a href="https://wa.me/2547" class="cta">Call Now: 0706866177</a>
-</section>
-
-<section id="services" class="services">
-<h2>Our Services</h2>
-<div class="grid">
-<div class="card"><img src="images/tv-mounting.jpg" alt="TV Mounting">
-    <h3>TV Mounting</h3>
-    <p>Professional wall mounting, neat cables.</p>
+  <div class="cta-row">
+    <a href="https://wa.me/254706866177?text=Hello%20STEVETECH%20need%20service%20in%20Kitui" class="btn-whatsapp">Chat on WhatsApp</a>
+    <a href="tel:0706866177" class="btn-call">Call: 0706866177</a>
+  </div>
 </div>
-<div class="card"><img src="images/wifi.jpg" alt="Networking">
-    <h3>Networking & WiFi</h3>
-    <p>Router setup, WiFi extension, LAN.</p>
-</div>
-<div class="card"><img src="images/cctv.jpg" alt="CCTV">
-    <h3>CCTV Installation</h3>
-    <p>Home & business security cameras.</p>
-
-</div>
-<div class="card"><img src="images/electrical.jpg" alt="Electrical"><h3>Electrical Systems</h3><p>House wiring, sockets, lighting.</p></div>
-</div>
-</section>
-
-<section id="work" class="gallery">
-<h2>Our Recent Work - Real Photos</h2>
-<p>See how we work. All photos are our real jobs in Kitui.</p>
-<div class="grid">
-<div class="work-card"><img src="images/work1.jpg"><span>TV Mounting - Client Home Kitui</span></div>
-<div class="work-card"><img src="images/work2.jpg"><span>Me Installing TV Bracket</span></div>
-<div class="work-card"><img src="images/work3.jpg"><span>WiFi Setup Complete</span></div>
-<div class="work-card"><img src="images/work4.jpg"><span>Electrical Wiring</span></div>
-<div class="work-card"><img src="images/work5.jpg"><span>CCTV Installation</span></div>
-<div class="work-card"><img src="images/work6.jpg"><span>Home Theatre Setup</span></div>
-</div>
-</section>
 
 <footer>
-<p>&copy; 2026 STEVETECH DIGITAL - Kitui. All Rights Reserved.</p>
-<p>Call: 07XX XXX XXX | Location: Kitui Town</p>
+  <p><b>STEVETECH DIGITAL</b> - Kitui Town | Electrical Licensed | CCNA Certified - Call 0706866177</p>
+  <p class="foot-small">© 2026 All Rights Reserved.</p>
 </footer>
-</body>
 
-    
+<script src="search.js"></script>
+</body>
+</html>
