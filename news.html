@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEVETECH DIGITAL News - Kitui</title>
+
+<!-- WHATSAPP PREVIEW CARD - Like Nicholas status! -->
+<meta property="og:title" content="STEVETECH DIGITAL News - TV Mounting Kitui">
+<meta property="og:description" content="Latest installations in Kitui, Mwingi. TV Mounting, DSTV, CCTV.">
+<meta property="og:image" content="https://emanuelkitili.github.io/stevetech-website/images/work1.jpg">
+<meta property="og:url" content="https://emanuelkitili.github.io/stevetech-website/news.html">
+<meta property="og:type" content="website">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>STEVETECH DIGITAL - Latest Work</h1>
+<div id="news-container"></div>
+<script src="posts.js"></script>
+<script>
+const container = document.getElementById('news-container');
+posts.reverse().forEach(post => {
+  container.innerHTML += `
+    <div style="border:1px solid #ddd; margin:15px; padding:15px; border-radius:10px;">
+      <img src="${post.image}" style="width:100%; max-height:400px; object-fit:cover; border-radius:8px;">
+      <h2>${post.title}</h2>
+      <p><small>${post.date} | ${post.author}</small></p>
+      <p>${post.description}</p>
+      <a href="https://wa.me/254712000000?text=Hi Stevetech, I saw ${post.title}" style="background:green;color:white;padding:10px 20px;border-radius:5px;text-decoration:none;">Comment on WhatsApp</a>
+    </div>
+  `;
+});
+</script>
+</body>
+</html>
