@@ -1,36 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>STEVETECH DIGITAL News - Kitui</title>
+<title>STEVETECH NEWS - Latest TV Mounting & DSTV Works Kitui</title>
 
-<!-- WHATSAPP PREVIEW CARD - Like Nicholas status! -->
-<meta property="og:title" content="STEVETECH DIGITAL News - TV Mounting Kitui">
-<meta property="og:description" content="Latest installations in Kitui, Mwingi. TV Mounting, DSTV, CCTV.">
-<meta property="og:image" content="https://emanuelkitili.github.io/stevetech-website/images/work1.jpg">
+<!-- WHATSAPP BIG PHOTO - This makes status big photo! -->
+<meta property="og:title" content="STEVETECH NEWS - See Our Latest Works!">
+<meta property="og:description" content="Daily TV Mounting, DSTV, CCTV installations in Kitui. Click to view!">
+<meta property="og:image" content="https://emanuelkitili.github.io/stevetech-website/images/hero-datacenter.jpg">
 <meta property="og:url" content="https://emanuelkitili.github.io/stevetech-website/news.html">
 <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 
-<link rel="stylesheet" href="style.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f5f5f5}
+nav{background:#111;padding:12px 20px;display:flex;justify-content:space-between;align-items:center}
+nav .logo{color:#ff6600;font-weight:bold;font-size:20px}
+nav a{color:white;text-decoration:none;background:#ff6600;padding:6px 12px;border-radius:20px;font-size:14px}
+.container{max-width:900px;margin:auto;padding:20px}
+.news-card{background:white;border-radius:15px;overflow:hidden;margin-bottom:20px;box-shadow:0 3px 10px rgba(0,0,0,0.1)}
+.news-card img{width:100%;height:300px;object-fit:cover}
+.news-body{padding:18px}
+.news-body h2{font-size:22px;margin-bottom:8px;color:#111}
+.news-body .meta{color:#888;font-size:13px;margin-bottom:10px}
+.news-body p{color:#444;line-height:1.6;margin-bottom:15px}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn{padding:10px 18px;border-radius:25px;text-decoration:none;font-weight:bold;font-size:14px;display:inline-block;text-align:center}
+.btn-whatsapp{background:#25D366;color:white}
+.btn-call{background:#111;color:white}
+.btn-share{background:#ff6600;color:white}
+footer{background:#111;color:#aaa;text-align:center;padding:20px;margin-top:30px;font-size:14px}
+</style>
 </head>
 <body>
-<h1>STEVETECH DIGITAL - Latest Work</h1>
-<div id="news-container"></div>
+
+<nav>
+<div class="logo">STEVETECH NEWS</div>
+<a href="index.html">← Back Home</a>
+</nav>
+
+<div class="container">
+<h1 style="margin-bottom:5px;">🔥 Latest Works & News</h1>
+<p style="color:#666;margin-bottom:20px;">Updated daily - Share this page on WhatsApp Status for big photo!</p>
+
+<!-- POSTS LOAD HERE FROM posts.js -->
+<div id="news-container">
+<p>Loading news...</p>
+</div>
+
+</div>
+
+<footer>
+<p>STEVETECH DIGITAL SOLUTIONS - Kitui | 0706866177</p>
+<p>Want to order? Comment via WhatsApp button on each post!</p>
+</footer>
+
+<!-- NO FACEBOOK COMMENTS! NO PROFILE PROBLEM! -->
 <script src="posts.js"></script>
 <script>
 const container = document.getElementById('news-container');
-posts.reverse().forEach(post => {
-  container.innerHTML += `
-    <div style="border:1px solid #ddd; margin:15px; padding:15px; border-radius:10px;">
-      <img src="${post.image}" style="width:100%; max-height:400px; object-fit:cover; border-radius:8px;">
-      <h2>${post.title}</h2>
-      <p><small>${post.date} | ${post.author}</small></p>
-      <p>${post.description}</p>
-      <a href="https://wa.me/254712000000?text=Hi Stevetech, I saw ${post.title}" style="background:green;color:white;padding:10px 20px;border-radius:5px;text-decoration:none;">Comment on WhatsApp</a>
+if(typeof posts !== 'undefined' && posts.length > 0){
+  const sorted = posts.slice().reverse(); // Newest first
+  container.innerHTML = sorted.map(post => `
+    <div class="news-card">
+      <img src="${post.image}" onerror="this.src='images/hero-datacenter.jpg'">
+      <div class="news-body">
+        <div class="meta">${post.date} • ${post.author} • Kitui</div>
+        <h2>${post.title}</h2>
+        <p>${post.description}</p>
+        <div class="actions">
+          <a class="btn btn-whatsapp" href="https://wa.me/254706866177?text=Hi%20Stevetech%20I%20saw%20this%20post:%20${encodeURIComponent(post.title)}%20-%20${encodeURIComponent(post.image)}%20I%20want%20same%20service!" target="_blank">💬 Comment via WhatsApp</a>
+          <a class="btn btn-call" href="tel:0706866177">📞 Call to Order</a>
+          <a class="btn btn-share" href="https://wa.me/?text=${encodeURIComponent(post.title + ' - Check this work by Stevetech: https://emanuelkitili.github.io/stevetech-website/news.html')}" target="_blank">↗️ Share</a>
+        </div>
+      </div>
     </div>
-  `;
-});
+  `).join('');
+} else {
+  container.innerHTML = "<p>No news yet. Add posts in posts.js</p>";
+}
 </script>
+
 </body>
 </html>
