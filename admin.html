@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEVETECH - Easy Posting Admin</title>
+<style>
+body{font-family: Arial; background:#f4f4f4; padding:15px; max-width:600px; margin:auto;}
+.card{background:white; padding:20px; border-radius:12px; box-shadow:0 2px 10px rgba(0,0,0,0.1);}
+h1{color:#ff6600; text-align:center;}
+input, textarea{width:100%; padding:12px; margin:8px 0; border:1px solid #ccc; border-radius:8px; box-sizing:border-box; font-size:16px;}
+button{background:#ff6600; color:white; border:none; padding:15px; width:100%; border-radius:8px; font-size:18px; font-weight:bold; cursor:pointer; margin-top:10px;}
+button:hover{background:#e55a00;}
+.preview{margin-top:20px; background:#fff3e0; padding:15px; border-radius:8px; border-left:4px solid #ff6600;}
+pre{background:#222; color:#0f0; padding:15px; border-radius:8px; overflow-x:auto; white-space:pre-wrap; word-wrap:break-word; margin-top:15px;}
+.success{background:#d4edda; color:#155724; padding:10px; border-radius:5px; margin-top:10px; display:none;}
+</style>
+</head>
+<body>
+
+<div class="card">
+<h1>STEVETECH DIGITAL<br>Easy Posting</h1>
+<p style="text-align:center;">Post like Facebook! Type and Generate!</p>
+
+<label><b>1. Photo Name (you uploaded to images/ folder):</b></label>
+<input type="text" id="image" placeholder="e.g. work4.jpg or today-job.jpg">
+
+<label><b>2. Title (Short, appears over photo):</b></label>
+<input type="text" id="title" placeholder="e.g. TV Mounting Kitui Town - 55 inch">
+
+<label><b>3. Description (Your full story - location, client happy, phone):</b></label>
+<textarea id="description" rows="5" placeholder="e.g. Client happy! Mounted 55 inch Samsung in Kitui Town with hidden cables. Call 0706866177 for same service!"></textarea>
+
+<label><b>4. Date:</b></label>
+<input type="date" id="date">
+
+<button onclick="generatePost()">🔥 GENERATE POST CODE</button>
+
+<div id="success" class="success">✅ Code generated! Copy below and paste into posts.js</div>
+
+<div class="preview" id="previewArea" style="display:none;">
+<h3>Live Preview:</h3>
+<img id="previewImg" src="" style="width:100%; border-radius:8px; display:none;">
+<h3 id="previewTitle"></h3>
+<p id="previewDesc"></p>
+
+<h3>👇 COPY THIS CODE (Add to posts.js):</h3>
+<pre id="outputCode"></pre>
+
+<p style="background:yellow; padding:10px; border-radius:5px;"><b>HOW TO ADD:</b><br>
+1. Copy code above<br>
+2. Go to GitHub > Open <b>posts.js</b> > Pencil Edit<br>
+3. Paste at bottom BEFORE the last ];<br>
+4. Add a comma , after previous post<br>
+5. Commit! Done - appears on website!</p>
+</div>
+</div>
+
+<script>
+// Auto set today's date
+document.getElementById('date').valueAsDate = new Date();
+
+function generatePost(){
+  const title = document.getElementById('title').value.trim();
+  const desc = document.getElementById('description').value.trim();
+  const imgInput = document.getElementById('image').value.trim();
+  const date = document.getElementById('date').value;
+  const author = "Stevetech Digital";
+  
+  if(!title || !desc || !imgInput){
+    alert("Please fill Title, Description and Image name!");
+    return;
+  }
+
+  // Fix image path
+  let imagePath = imgInput;
+  if(!imagePath.startsWith("images/")){
+    imagePath = "images/" + imagePath;
+  }
+
+  const id = Math.floor(Math.random()*9000)+10;
+  
+  const code = `  {
+    id: ${id},
+    title: "${title.replace(/"/g, '\\"')}",
+    description: "${desc.replace(/"/g, '\\"')}",
+    image: "${imagePath}",
+    date: "${date}",
+    author: "${author}"
+  },`;
+
+  // Show preview
+  document.getElementById('previewArea').style.display = 'block';
+  document.getElementById('success').style.display = 'block';
+  document.getElementById('previewTitle').innerText = title;
+  document.getElementById('previewDesc').innerText = desc;
+  
+  const previewImg = document.getElementById('previewImg');
+  // Try to show preview if image exists locally (won't work on GitHub preview but okay)
+  previewImg.style.display = 'block';
+  previewImg.src = imagePath;
+  previewImg.onerror = function(){ this.style.display='none'; };
+
+  document.getElementById('outputCode').innerText = code;
+  
+  // Scroll to code
+  document.getElementById('outputCode').scrollIntoView({behavior:'smooth'});
+}
+</script>
+
+</body>
+</html>
