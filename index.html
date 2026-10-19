@@ -3,14 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STEVETECH DIGITAL - Tech & Power Infrastructure</title>
+    
+    <!-- SEO - Makes you appear in Chrome/Google like Lower Eastern Digital -->
+    <title>STEVETECH DIGITAL - TV Mounting, DSTV, CCTV Kitui | Best Fundi Kitui</title>
+    <meta name="description" content="Best Fundi for TV Mounting, DSTV Installation, CCTV, Solar, Projector, Electrical Wiring in Kitui, Mwingi. Professional services. Call 0706866177">
+    <meta name="keywords" content="TV mounting Kitui, DSTV installation Kitui, CCTV Kitui, fundi Kitui, electrical wiring Kitui, solar Kitui, projector Kitui">
+    <meta name="author" content="STEVETECH DIGITAL">
+
+    <!-- WHATSAPP PREVIEW CARD - Makes link show big image like Nicholas status! -->
+    <meta property="og:title" content="STEVETECH DIGITAL - TV Mounting & DSTV Kitui">
+    <meta property="og:description" content="Professional TV Mounting, DSTV Installation, CCTV, Solar, Electrical Wiring in Kitui. Call 0706866177 - Best Fundi in Kitui!">
+    <meta property="og:image" content="https://emanuelkitili.github.io/stevetech-website/images/hero-datacenter.jpg">
+    <meta property="og:url" content="https://emanuelkitili.github.io/stevetech-website/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="STEVETECH DIGITAL">
+    
+    <!-- Twitter/WhatsApp large preview -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://emanuelkitili.github.io/stevetech-website/images/hero-datacenter.jpg">
+
+    <link rel="canonical" href="https://emanuelkitili.github.io/stevetech-website/">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="top-bar">
-        <div><span class="ticker">UPDATES:</span><span class="ticker-text"> Latest industrial automation deployment completed in Kitui.</span></div>
-        <div id="currentDate">Kitui Based - Countrywide</div>
+        <div><span class="ticker">UPDATES:</span><span class="ticker-text"> Latest TV Mounting & DSTV deployment completed in Kitui. New posts daily!</span></div>
+        <div id="currentDate">Kitui Based - Countrywide - Call: 0706866177</div>
     </div>
 
     <header class="main-header">
@@ -18,9 +37,10 @@
         <nav class="navbar" id="navbar">
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="news.html" style="background: #ff6600; color: white; padding: 5px 10px; border-radius: 5px;">🔥 News</a></li>
                 <li><a href="networking.html">Networking</a></li>
-                <li><a href="electrical.html">Electrical Systems</a></li>
-                <li><a href="services.html">Other Services</a></li>
+                <li><a href="electrical.html">Electrical</a></li>
+                <li><a href="services.html">Services</a></li>
                 <li><a href="contact.html" class="contact-btn">Contact Us</a></li>
             </ul>
         </nav>
@@ -33,19 +53,20 @@
     <div class="content-wrapper">
         <main>
             <div class="featured-hero">
-                <!-- YOUR PHOTO 1 HERE -->
-                <img src="images/hero-datacenter.jpg" alt="Data Center Work" class="hero-img" onerror="this.src='https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900'">
+                <img src="images/hero-datacenter.jpg" alt="STEVETECH Work Kitui" class="hero-img" onerror="this.src='https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900'">
                 <div class="hero-overlay">
-                    <span class="badge">Featured Case Study</span>  
-                    <h2 class="hero-title"><a href="networking.html">Architecting High-Availability Server Networks Combined with Clean Industrial Power Distribution</a></h2>
+                    <span class="badge">Featured - Kitui's Best Fundi</span>  
+                    <h2 class="hero-title"><a href="news.html">Architecting High-Availability Server Networks Combined with Clean Industrial Power & TV Mounting Services</a></h2>
                 </div>
             </div>
 
-            <div class="section-title">Latest Project Deployments <a href="services.html" class="view-all-link">View All →</a></div>
+            <div class="section-title">Latest Project Deployments <a href="news.html" class="view-all-link">View All News →</a></div>
             
+            <!-- DYNAMIC NEWS - UNLIMITED POSTS WILL APPEAR HERE AUTOMATICALLY -->
+            <div id="dynamic-posts" class="grid-layout"></div>
+
             <div class="grid-layout">
                 <article class="card">
-                    <!-- YOUR PHOTO 2 HERE -->
                     <img src="images/project-cabling.jpg" alt="Networking Work" class="card-img" onerror="this.src='https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600'">
                     <div class="card-body">
                         <div class="card-meta">⚡ Electrical • 🌐 Networking</div>
@@ -54,7 +75,6 @@
                 </article>
 
                 <article class="card">
-                    <!-- YOUR PHOTO 3 HERE -->
                     <img src="images/project-services.jpg" alt="Our Services" class="card-img" onerror="this.src='https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600'">
                     <div class="card-body">
                         <div class="card-meta">🔬 Electronics Engineering</div>
@@ -97,9 +117,35 @@
 
     <footer>
         <p>&copy; 2026 STEVETECH DIGITAL. All Rights Reserved.</p>
-        <p class="license-info">Licensed Contractor Electrical | Certified Network Engineer CCNA - Call: 0706866177</p>
+        <p class="license-info">Licensed Contractor Electrical | Certified Network Engineer CCNA - Call: 0706866177 | <a href="news.html" style="color: orange;">View Latest News</a></p>
     </footer>
 
+<script src="posts.js"></script>
+<script>
+// SHOW UNLIMITED POSTS AUTOMATICALLY ON HOMEPAGE
+try {
+  const container = document.getElementById('dynamic-posts');
+  if (typeof posts !== 'undefined' && container) {
+    posts.slice(-2).reverse().forEach(post => {
+      container.innerHTML += `
+        <article class="card">
+          <img src="${post.image}" alt="${post.title}" class="card-img" onerror="this.src='https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600'">
+          <div class="card-body">
+            <div class="card-meta">📰 ${post.date} • ${post.author}</div>
+            <h3 class="card-title"><a href="news.html">${post.title}</a></h3>
+            <p style="font-size:14px; margin-top:5px;">${post.description.substring(0,100)}...</p>
+          </div>
+        </article>
+      `;
+    });
+  }
+} catch(e){ console.log('posts.js not yet uploaded'); }
+</script>
 <script src="search.js"></script>
+<script>
+function toggleMenu(){
+  document.getElementById('navbar').classList.toggle('active');
+}
+</script>
 </body>
 </html>
