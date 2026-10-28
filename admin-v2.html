@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stevetech Admin - Post Job</title>
+<style>
+body{font-family:Arial;padding:20px;background:#f5f5f5}
+.box{background:white;padding:20px;border-radius:12px;max-width:400px;margin:auto;box-shadow:0 2px 10px rgba(0,0,0,0.1)}
+input,textarea{width:100%;padding:12px;margin:8px 0;border:1px solid #ddd;border-radius:8px;box-sizing:border-box}
+button{background:#25D366;color:white;padding:14px;width:100%;border:none;border-radius:8px;font-weight:bold;font-size:16px;cursor:pointer}
+button:disabled{background:gray}
+#status{margin-top:10px;text-align:center;font-weight:bold}
+</style>
+</head>
+<body>
+<div class="box">
+<h2>🔧 Post New Job</h2>
+<input id="title" placeholder="Title: e.g. DSTV Installation - Zombe">
+<input type="file" id="imageFile" accept="image/*">
+<textarea id="desc" placeholder="Maelezo mafupi..."></textarea>
+<button id="btn" onclick="postJob()">POST JOB 🔥</button>
+<div id="status"></div>
+</div>
+
+<script>
+const TOKEN = "WEKA_TOKEN_YAKO_HAPA_ghp_xxxx"; // <-- BADILISHA HAPA
+const REPO = "emanuelkitili/stevetech-website"; // <-- BADILISHA KAMA JINA NI TOFAUTI
+const BRANCH = "main";
+
+async function postJob(){
+  const title = document.getElementById('title').value;
+  const desc = document.getElementById('desc').value;
+  const fileInput = document.getElementById('imageFile');
+  const btn = document.getElementById('btn');
+  const status = document.getElementById('status');
+  
+  if(!title || !fileInput.files[0] || !desc){ status.innerText="Jaza vyote!"; return; }
+  
+  btn.disabled=true; status.innerText="⏳ Inapost... subiri 20 sec";
+  
+  try{
+    const file = fileInput.files[0];
+    const fileName = "images/work" + Date.now() + ".jpg";
+    const base64 = await toBase64(file);
+    const content = base64.split(',')[1];
+
+    // 1. Upload Image
+    await fetch(`https://api.github.com/repos/${REPO}/contents/${fileName}`,{
+      method:"PUT",
+      headers:{"Authorization":`token ${TOKEN}`,"Content-Type":"application/json"},
+      body: JSON.stringify({message:"Add "+fileName, content: content, branch: BRANCH})
+    });
+
+    // 2. Get posts.json
+    let posts = [];
+    try{
+      const res = await fetch(`https://api.github.com/repos/${REPO}/contents/posts.json?ref=${BRANCH}`,{headers:{"Authorization":`token ${TOKEN}`}});
+      const data = await res.json();
+      posts = JSON.parse(atob(data.content));
+      var sha = data.sha;
+    }catch(e){ var sha=null; }
+
+    posts.unshift({title:title, image:fileName, desc:desc, date:new Date().toLocaleDateString()});
+
+    // 3. Update posts.json
+    await fetch(`https://api.github.com/repos/${REPO}/contents/posts.json`,{
+      method:"PUT",
+      headers:{"Authorization":`token ${TOKEN}`,"Content-Type":"application/json"},
+      body: JSON.stringify({
+        message:"New job: "+title,
+        content: btoa(JSON.stringify(posts,null,2)),
+        branch: BRANCH,
+        sha: sha
+      })
+    });
+
+    status.innerText="✅ Ime-post! Itaonekana kwa website baada ya 1 min!";
+    status.style.color="green";
+  }catch(err){
+    status.innerText="❌ Error: "+err.message;
+    status.style.color="red";
+  }
+  btn.disabled=false;
+}
+function toBase64(file){return new Promise((r,j)=>{const reader=new FileReader();reader.readAsDataURL(file);reader.onload=()=>r(reader.result);reader.onerror=e=>j(e);})}
+</script>
+</body>
+</html>
